@@ -1,0 +1,30 @@
+{
+  "name": "ionicpaytm",
+  "version": "0.0.1",
+  "description": "This plugin allows Cordova to use paytm android and ios SDKS.",
+  "cordova": {
+    "id": "com.paytm.ionicpaytm",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https: //github.com/rajanmodi30/Test.git"
+  },
+  "keywords": [
+    "phonegap",
+    "paytm",
+    "ionicpaytm",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "Matt Parsons",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https: //github.com/rajanmodi30/issues"
+  },
+  "homepage": "https: //github.com/rajanmodi30/Test.git#readme"
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	id="com.paytm.ionicpaytm"
+	version="0.0.1">
+
+    <name>IonicPaytm</name>
+    <description>This plugin allows Cordova to use paytm android and ios SDKS.</description>
+	<author>Rajan Modi</author>
+	<keywords>phonegap,paytm,paytmionic,cordova</keywords>
+    <license>Apache 2.0</license>
+	<repo>https://github.com/rajanmodi30/paytmcordova</repo>
+
+    <js-module src="www/IonicPaytm.js" name="IonicPaytm">
+    	<clobbers target="window.IonicPaytm"/>
+    </js-module>
+
+    <platform name="android">
+
+
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="IonicPaytm">
+				<param name="android-package" value="com.paytm.ionicpaytm.IonicPaytm" />
+				<param name="onload" value="true" />
+			</feature>
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/*">
+		<uses-permission android:name="android.permission.INTERNET"/>
+				<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+				<uses-permission android:name="android.permission.READ_SMS"/>
+				<uses-permission android:name="android.permission.RECEIVE_SMS"/>
+		</config-file>
+
+	<source-file src="src/android/src/com/paytm/ionicpaytm/IonicPaytm.java" target-dir="src/com/paytm/ionicpaytm" />
+    <framework src="src/android/src/com/paytm/ionicpaytm/IonicPaytm.gradle" custom="true" type="gradleReference" />
+    </platform>
+
+	<platform name="ios">
+		<config-file target="config.xml" parent="/*">
+			<feature name="IonicPaytm">
+				<param name="ios-package" value="NXWIonicPaytm"/>
+			</feature>
+		</config-file>
+
+		<header-file src="src/ios/NXWIonicPaytm.h"/>
+		<source-file src="src/ios/NXWIonicPaytm.m"/>
+		<header-file src="src/ios/PaytmIosSDK/include/PaymentsSDK.h"/>
+		<header-file src="src/ios/PaytmIosSDK/include/PGMerchantConfiguration.h"/>
+		<header-file src="src/ios/PaytmIosSDK/include/PGOrder.h"/>
+		<header-file src="src/ios/PaytmIosSDK/include/PGServerEnvironment.h"/>
+		<header-file src="src/ios/PaytmIosSDK/include/PGTransactionViewController.h"/>
+
+<!-- Facebook framework -->
+<source-file src="src/ios/PaytmIosSDK/libPaymentsSDK.a" framework="true"/>
+
+		<framework src="SystemConfiguration.framework" />
+	</platform>
+
+</plugin>
